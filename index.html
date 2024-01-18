@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Football League</title>
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding: 1em;
+        }
+
+        .tab {
+            cursor: pointer;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .tab:hover {
+            background-color: #555;
+        }
+
+        .tab-content {
+            display: none;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .active-tab {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Cool Football League</h1>
+    </header>
+
+    <div class="tabs">
+        <div class="tab" onclick="openTab('standings')">League Standings</div>
+        <div class="tab" onclick="openTab('topScorers')">Top Scorers</div>
+        <div class="tab" onclick="openTab('topAssists')">Top Assists</div>
+    </div>
+
+    <main>
+        <div id="standings" class="tab-content active-tab">
+            <h2>League Standings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Wins</th>
+                        <th>Draws</th>
+                        <th>Losses</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Team A</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>Team B</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>15</td>
+                    </tr>
+                    <!-- Add more teams as needed -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="topScorers" class="tab-content">
+            <h2>Top Scorers</h2>
+            <ul>
+                <!-- List of top scorers -->
+                <li>Player A - 10 goals</li>
+                <li>Player B - 8 goals</li>
+                
+            </ul>
+        </div>
+
+        <div id="topAssists" class="tab-content">
+            <h2>Top Assists</h2>
+            <ul>
+                <!-- List of top assists -->
+                <li>Player X - 5 assists</li>
+                <li>Player Y - 4 assists</li>
+                
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cool Football League. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabContent, tabs;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active-tab");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add("active-tab");
+        }
+    </script>
+
+</body>
+
+</html>
